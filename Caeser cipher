@@ -1,17 +1,16 @@
 def caesar_cipher_encrypt(text, shift):
     encrypted_text = ""
     for char in text:
-        if char.isalpha():  # Check if the character is a letter
+        if char.isalpha(): 
             shift_base = ord('A') if char.isupper() else ord('a')
-            # Perform the shift and wrap around using modulo
             encrypted_char = chr((ord(char) - shift_base + shift) % 26 + shift_base)
             encrypted_text += encrypted_char
         else:
-            encrypted_text += char  # Non-alphabetic characters are not changed
+            encrypted_text += char  
     return encrypted_text
 
 def caesar_cipher_decrypt(text, shift):
-    return caesar_cipher_encrypt(text, -shift)  # Decrypting is just encrypting with the negative shift
+    return caesar_cipher_encrypt(text, -shift)  
 
 def main():
     print("Caesar Cipher Program")
